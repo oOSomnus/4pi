@@ -2,6 +2,8 @@
 
 Personal pi coding agent bundle — extensions, skills, themes in one install.
 
+[中文](README.zh-CN.md)
+
 ## Contents
 
 ### Extensions (`extensions/`)
@@ -44,6 +46,19 @@ Adapted from [mattpocock/skills](https://github.com/mattpocock/skills):
 | `oosomnus-dark` | Dark theme with red accents |
 | `oosomnus-light` | Light theme with red accents, blue highlights |
 | `gruvbox-dark` | Retro warm tones from Gruvbox palette |
+
+## Prerequisites
+
+| Tool | Required for |
+|---|---|
+| `npm` | pi, pi-mcp-adapter, context-mode |
+| `pip3` (or `pip`) | ddgr (DuckDuckGo CLI) |
+| `curl` | rtk download |
+| `git` | pi package installs |
+| `bash` | install script |
+
+The install script checks `npm`, `curl`, `git` and aborts if missing.
+`pip3`/`pip` is optional — ddgr is skipped with a warning if unavailable.
 
 ## Install
 

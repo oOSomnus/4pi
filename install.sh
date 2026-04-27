@@ -24,10 +24,30 @@ warn()  { echo -e "${YELLOW}[!]${NC} $1"; }
 err()   { echo -e "${RED}[✗]${NC} $1"; exit 1; }
 step()  { echo -e "\n${GREEN}==>${NC} ${YELLOW}$1${NC}"; }
 
+require_cmd() {
+  if ! command -v "$1" &>/dev/null; then
+    err "未找到 $1。请先安装: $2"
+  fi
+}
+
+# ============================================================
+# 前置条件检查
+# ============================================================
+echo -e "${YELLOW}检查前置条件...${NC}"
+require_cmd npm   "https://nodejs.org (推荐 nvm: https://github.com/nvm-sh/nvm)"
+require_cmd curl  "sudo apt install curl / brew install curl"
+require_cmd git   "sudo apt install git / brew install git"
+if command -v pip3 &>/dev/null || command -v pip &>/dev/null; then
+  info "pip 可用"
+else
+  warn "未找到 pip3/pip — ddgr 将跳过。安装 Python 及 pip: https://www.python.org"
+fi
+echo ""
+
 # ============================================================
 # Step 1: 安装 pi
 # ============================================================
-step "1/5 安装 pi coding agent"
+step "1/6 安装 pi coding agent"
 
 if command -v pi &>/dev/null; then
   info "pi 已安装: $(pi --version 2>/dev/null || echo 'unknown')"
@@ -40,7 +60,7 @@ fi
 # ============================================================
 # Step 2: 安装 4pi（extensions + skills + themes 合一）
 # ============================================================
-step "2/5 安装 4pi (extensions + skills + themes)"
+step "2/6 安装 4pi (extensions + skills + themes)"
 
 pi install git:github.com/oOSomnus/4pi 2>&1
 info "4pi 安装完成"
@@ -48,7 +68,7 @@ info "4pi 安装完成"
 # ============================================================
 # Step 3: 安装 rtk（命令输出压缩工具）
 # ============================================================
-step "3/5 安装 rtk"
+step "3/6 安装 rtk"
 
 if command -v rtk &>/dev/null; then
   info "rtk 已安装: $(rtk --version 2>/dev/null || echo 'ok')"
@@ -59,17 +79,38 @@ else
 fi
 
 # ============================================================
-# Step 4: 安装 pi-mcp-adapter
+# Step 4: 安装 ddgr（DuckDuckGo 终端搜索）
 # ============================================================
-step "4/5 安装 pi-mcp-adapter"
+step "4/6 安装 ddgr"
+
+if command -v ddgr &>/dev/null; then
+  info "ddgr 已安装: $(ddgr --version 2>/dev/null || echo 'ok')"
+else
+  if command -v pip3 &>/dev/null; then
+    info "pip3 install ddgr..."
+    pip3 install ddgr 2>&1
+    info "ddgr 安装完成"
+  elif command -v pip &>/dev/null; then
+    info "pip install ddgr..."
+    pip install ddgr 2>&1
+    info "ddgr 安装完成"
+  else
+    warn "未找到 pip3/pip，跳过 ddgr 安装。请手动安装: https://github.com/jarun/ddgr"
+  fi
+fi
+
+# ============================================================
+# Step 5: 安装 pi-mcp-adapter
+# ============================================================
+step "5/6 安装 pi-mcp-adapter"
 
 pi install npm:pi-mcp-adapter 2>&1
 info "pi-mcp-adapter 安装完成"
 
 # ============================================================
-# Step 5: 安装 context-mode
+# Step 6: 安装 context-mode
 # ============================================================
-step "5/5 安装 context-mode"
+step "6/6 安装 context-mode"
 
 info "npm install -g context-mode..."
 npm install -g context-mode 2>&1
@@ -122,6 +163,7 @@ echo "已安装:"
 echo "  pi:             $(pi --version 2>/dev/null || echo 'check')"
 echo "  4pi:            extensions + skills + themes (github.com/oOSomnus/4pi)"
 echo "  rtk:            $(rtk --version 2>/dev/null || echo 'installed')"
+echo "  ddgr:           $(ddgr --version 2>/dev/null || echo 'not installed')"
 echo "  mcp-adapter:    pi-mcp-adapter"
 echo "  context-mode:   $(context-mode --version 2>/dev/null || echo 'installed')"
 echo "  mcp.json:       $MCP_FILE"
