@@ -1,0 +1,12 @@
+{
+  "name": "4pi",
+  "version": "1.0.0",
+  "description": "Personal pi collection — extensions, skills (adapted from mattpocock/skills), themes",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"],
+    "themes": ["./themes"]
+  }
+}
