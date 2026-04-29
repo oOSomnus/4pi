@@ -17,6 +17,7 @@
 
 改编自 [mattpocock/skills](https://github.com/mattpocock/skills)：
 
+- `browser-tools` — 基于 Chrome DevTools Protocol 的交互式浏览器自动化
 - `caveman` — 超压缩沟通模式
 - `design-an-interface` — 并行星代理接口设计
 - `domain-model` — DDD 风格领域建模
@@ -24,14 +25,18 @@
 - `git-guardrails-pi` — Git 安全钩子
 - `grill-me` — 无情追问，对方案进行压力测试
 - `improve-codebase-architecture` — 深度模块重构
+- `init` — 初始化项目的 AGENTS.md 和个人偏好文件
 - `migrate-to-shoehorn` — 将 `as` 断言迁移到 @total-typescript/shoehorn
 - `obsidian-vault` — Obsidian 知识库管理
+- `organize-worklog` — 整理零散工作日志，按周汇总归档
 - `qa` — 交互式 QA Bug 报告
 - `request-refactor-plan` — 含微提交的重构规划
 - `scaffold-exercises` — 练习目录脚手架
 - `setup-pre-commit` — Husky pre-commit 钩子
 - `tdd` — 测试驱动开发（红-绿-重构）
 - `to-issues` — 将计划拆分为可追踪的任务
+- `to-knowledge` — 提取项目隐知识到 `.pi/knowledge/`
+- `to-worklog` — 将对话记录为工作日志
 - `to-prd` — 将当前上下文转为 PRD
 - `triage-issue` — Bug 分类与 TDD 修复方案
 - `ubiquitous-language` — DDD 通用语言词汇表

@@ -17,6 +17,7 @@ Personal pi coding agent bundle — extensions, skills, themes in one install.
 
 Adapted from [mattpocock/skills](https://github.com/mattpocock/skills):
 
+- `browser-tools` — Interactive browser automation via Chrome DevTools Protocol
 - `caveman` — Ultra-compressed communication mode
 - `design-an-interface` — Parallel sub-agent interface design
 - `domain-model` — DDD-style domain modeling
@@ -24,14 +25,18 @@ Adapted from [mattpocock/skills](https://github.com/mattpocock/skills):
 - `git-guardrails-pi` — Git safety hooks
 - `grill-me` — Stress-test plans with relentless questioning
 - `improve-codebase-architecture` — Deep module refactoring
+- `init` — Initialize AGENTS.md and project preferences
 - `migrate-to-shoehorn` — Migrate `as` assertions to @total-typescript/shoehorn
 - `obsidian-vault` — Obsidian knowledge base management
+- `organize-worklog` — Organize scattered worklog files into weekly summaries
 - `qa` — Interactive QA bug reporting
 - `request-refactor-plan` — Refactor planning with micro-commits
 - `scaffold-exercises` — Exercise directory scaffolding
 - `setup-pre-commit` — Husky pre-commit hooks
 - `tdd` — Test-driven development (red-green-refactor)
 - `to-issues` — Break plans into trackable issues
+- `to-knowledge` — Extract implicit project knowledge to `.pi/knowledge/`
+- `to-worklog` — Record conversation as worklog entry
 - `to-prd` — Convert context to PRD
 - `triage-issue` — Bug triage with TDD fix plans
 - `ubiquitous-language` — DDD ubiquitous language glossary
