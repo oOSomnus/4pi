@@ -33,6 +33,7 @@
 - `request-refactor-plan` — 含微提交的重构规划
 - `scaffold-exercises` — 练习目录脚手架
 - `setup-pre-commit` — Husky pre-commit 钩子
+- `staged-review` — Git 暂存区代码审查
 - `tdd` — 测试驱动开发（红-绿-重构）
 - `to-issues` — 将计划拆分为可追踪的任务
 - `to-knowledge` — 提取项目隐知识到 `.pi/knowledge/`

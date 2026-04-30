@@ -33,6 +33,7 @@ Adapted from [mattpocock/skills](https://github.com/mattpocock/skills):
 - `request-refactor-plan` — Refactor planning with micro-commits
 - `scaffold-exercises` — Exercise directory scaffolding
 - `setup-pre-commit` — Husky pre-commit hooks
+- `staged-review` — Code review on git staged changes
 - `tdd` — Test-driven development (red-green-refactor)
 - `to-issues` — Break plans into trackable issues
 - `to-knowledge` — Extract implicit project knowledge to `.pi/knowledge/`
